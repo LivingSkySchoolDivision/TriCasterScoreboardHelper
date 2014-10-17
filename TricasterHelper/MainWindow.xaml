@@ -1,0 +1,9 @@
+﻿<Window x:Class="TricasterHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="224" Width="341">
+    <Grid>
+        <Button Name="btnSoccer" Content="Soccer" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="80" Click="btnSoccer_Click" Height="29"/>
+
+    </Grid>
+</Window>

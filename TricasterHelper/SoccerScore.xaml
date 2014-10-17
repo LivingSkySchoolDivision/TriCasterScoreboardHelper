@@ -1,0 +1,48 @@
+﻿<Window x:Class="TricasterHelper.SoccerScore"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SoccerScore" Height="527.333" Width="727" Loaded="Window_Loaded">
+    <Grid Margin="0,0,0,1">
+        <GroupBox HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="341" Width="338" Background="#190000FF">
+            <Grid>
+                <Button Name="btnHomeTeamSave" Content="Save" HorizontalAlignment="Left" Margin="244,10,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btnHomeTeamSave_Click"/>
+                <TextBox Name="txtHomeTeamName" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="Home Team Name" VerticalAlignment="Top" Width="229"/>
+                <TextBox Name="txtHomeTeamScore" Margin="102,118,0,0" TextWrapping="Wrap" Text="999" FontSize="60" Height="81" VerticalAlignment="Top" IsEnabled="False" TextAlignment="Center" HorizontalAlignment="Left" Width="111"/>
+                <Button Name="btnHomeTeamPlu1s" Content="+1" HorizontalAlignment="Left" Margin="102,63,0,0" VerticalAlignment="Top" Width="111" Height="50" FontSize="25" Click="btnHomeTeamPlus1_Click"/>
+                <Button Name="btnHomeTeamMinus1" Content="-1" HorizontalAlignment="Left" Margin="102,204,0,0" VerticalAlignment="Top" Width="111" Height="50" FontSize="25" Click="btnHomeTeamMinus1_Click"/>
+                <Button Name="btnHomeTeamResetScore" Content="Reset score to zero" HorizontalAlignment="Left" Margin="102,0,0,10" VerticalAlignment="Bottom" Width="111" Click="btnHomeTeamResetScore_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="341" Width="338" Background="#19FF0000">
+            <Grid>
+                <Button x:Name="btnAwayTeamSave" Content="Save" HorizontalAlignment="Left" Margin="244,10,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+                <TextBox x:Name="txtAwayTeamName" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="Away Team Name" VerticalAlignment="Top" Width="229"/>
+                <TextBox x:Name="txtAwayTeamScore" Margin="102,118,0,0" TextWrapping="Wrap" Text="999" FontSize="60" Height="81" VerticalAlignment="Top" IsEnabled="False" TextAlignment="Center" HorizontalAlignment="Left" Width="111"/>
+                <Button x:Name="btnAwayTeamPlus1" Content="+1" HorizontalAlignment="Left" Margin="102,63,0,0" VerticalAlignment="Top" Width="111" Height="50" FontSize="25" Click="btnAwayTeamPlus2_Click"/>
+                <Button x:Name="btnAwayTeamMinus1" Content="-1" HorizontalAlignment="Left" Margin="102,204,0,0" VerticalAlignment="Top" Width="111" Height="50" FontSize="25" Click="btnAwayTeamMinus2_Click"/>
+                <Button x:Name="btnAwayTeamResetScore" Content="Reset score to zero" HorizontalAlignment="Left" Margin="102,0,0,10" VerticalAlignment="Bottom" Width="111" Click="btnAwayTeamResetScore_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox HorizontalAlignment="Right" Margin="0,356,10,0" VerticalAlignment="Top" Height="124" Width="263">
+            <Grid HorizontalAlignment="Left" Height="124" Margin="0,0,-12,-6" VerticalAlignment="Top" Width="263">
+                <Button Name="btnGameSegment_FirstHalf" Content="First Half" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="104" Click="btnGameSegment_FirstHalf_Click"/>
+                <Button Name="btnGameSegment_SecondHalf" Content="Second Half" Margin="91,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="104" Click="btnGameSegment_SecondHalf_Click"/>
+                <Button Name="btnGameSegment_OverTime" Content="Overtime" Margin="172,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="104" Click="btnGameSegment_OverTime_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Margin="10,356,0,0" VerticalAlignment="Top" Height="124" HorizontalAlignment="Left" Width="366">
+            <Grid Margin="0,0,-12,-6">
+                <TextBox Name="txtGameTimerHours" HorizontalAlignment="Left" Height="63" Margin="10,41,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="40" TextAlignment="Center"/>
+                <TextBox Name="txtGameTimerMinutes" HorizontalAlignment="Left" Height="63" Margin="132,41,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="40" TextAlignment="Center"/>
+                <TextBox Name="txtGameTimerSeconds" HorizontalAlignment="Left" Height="63" Margin="71,41,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="40" TextAlignment="Center"/>
+                <TextBox Name="txtGameTimerHours_Reset" HorizontalAlignment="Left" Height="20" Margin="10,16,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
+                <TextBox Name="txtGameTimerMinutes_Reset" HorizontalAlignment="Left" Height="20" Margin="132,16,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
+                <TextBox Name="txtGameTimerSeconds_Reset" HorizontalAlignment="Left" Height="20" Margin="71,16,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
+                <Button Name="btnGameTimerSet" Content="Set" HorizontalAlignment="Left" Margin="193,16,0,0" VerticalAlignment="Top" Width="57"/>
+                <Button Name="btnGameTimerStart" Content="Start" HorizontalAlignment="Left" Margin="193,41,0,0" VerticalAlignment="Top" Width="75" Height="63"/>
+                <Button Name="btnGameTimerStop" Content="Stop" HorizontalAlignment="Left" Margin="273,41,0,0" VerticalAlignment="Top" Width="75" Height="63"/>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>
