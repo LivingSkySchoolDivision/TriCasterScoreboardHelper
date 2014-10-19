@@ -49,7 +49,10 @@ namespace TricasterHelper
             txtGameTimerHours.Text = game.Clock.Hours.ToString("D2");
             txtGameTimerMinutes.Text = game.Clock.Minutes.ToString("D2");
             txtGameTimerSeconds.Text = game.Clock.Seconds.ToString("D2");
-            txtGameTimerTotalSecond.Text = game.Clock.TotalSeconds.ToString("D10");            
+            txtGameTimerFriendly.Text = game.Clock.TotalMinutes.ToString("D2") + ":" + game.Clock.Seconds.ToString("D2");
+
+            // Save the file
+            game.Save();          
         }
 
         private void updateFields(SoccerGame game)

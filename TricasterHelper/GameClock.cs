@@ -35,6 +35,14 @@ namespace TricasterHelper
             }
         }
 
+        public int TotalMinutes
+        {
+            get
+            {
+                return (int)((double)(this.TotalSeconds) / 60);
+            }
+        }
+
         public int Seconds
         {
             get 

@@ -9,11 +9,11 @@ namespace TricasterHelper
 {
     abstract class Game
     {
-        FileStream VariableFile { get; set; }
+        protected string fileName { get; set; }
 
         protected Game(string fileName)
         {
-
+            this.fileName = fileName;
         }
 
         public abstract void Save();

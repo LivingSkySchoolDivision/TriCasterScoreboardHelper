@@ -41,7 +41,10 @@
                 <Button Name="btnGameTimerSet" Content="Set" HorizontalAlignment="Left" Margin="193,16,0,0" VerticalAlignment="Top" Width="57" Click="btnGameTimerSet_Click"/>
                 <Button Name="btnGameTimerStart" Content="Start" HorizontalAlignment="Left" Margin="193,41,0,0" VerticalAlignment="Top" Width="75" Height="63" Click="btnGameTimerStart_Click"/>
                 <Button Name="btnGameTimerStop" Content="Stop" HorizontalAlignment="Left" Margin="273,41,0,0" VerticalAlignment="Top" Width="75" Height="63" Click="btnGameTimerStop_Click"/>
-                <TextBox Name="txtGameTimerTotalSecond" TextAlignment="Right" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="10,109,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="178"/>
+                <Label Content="Hours" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" FontSize="6" Width="56" HorizontalContentAlignment="Center"/>
+                <Label Content="Minutes" HorizontalAlignment="Left" Margin="71,1,0,0" VerticalAlignment="Top" FontSize="6" Width="56" HorizontalContentAlignment="Center"/>
+                <Label Content="Seconds" HorizontalAlignment="Left" Margin="132,1,0,0" VerticalAlignment="Top" FontSize="6" Width="56" HorizontalContentAlignment="Center"/>
+                <TextBox Name="txtGameTimerFriendly" TextAlignment="Right" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="10,109,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="178"/>
             </Grid>
         </GroupBox>
 
