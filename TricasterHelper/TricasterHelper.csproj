@@ -55,6 +55,7 @@
     </ApplicationDefinition>
     <Compile Include="Game.cs" />
     <Compile Include="GameClock.cs" />
+    <Compile Include="Helpers.cs" />
     <Compile Include="SoccerGame.cs" />
     <Compile Include="SoccerScore.xaml.cs">
       <DependentUpon>SoccerScore.xaml</DependentUpon>

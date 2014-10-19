@@ -1,7 +1,7 @@
 ﻿<Window x:Class="TricasterHelper.SoccerScore"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SoccerScore" Height="527.333" Width="727" Loaded="Window_Loaded">
+        Title="SoccerScore" Height="569.493" Width="727" Loaded="Window_Loaded">
     <Grid Margin="0,0,0,1">
         <GroupBox HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="341" Width="338" Background="#190000FF">
             <Grid>
@@ -30,17 +30,18 @@
                 <Button Name="btnGameSegment_OverTime" Content="Overtime" Margin="172,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="104" Click="btnGameSegment_OverTime_Click"/>
             </Grid>
         </GroupBox>
-        <GroupBox Margin="10,356,0,0" VerticalAlignment="Top" Height="124" HorizontalAlignment="Left" Width="366">
-            <Grid Margin="0,0,-12,-6">
-                <TextBox Name="txtGameTimerHours" HorizontalAlignment="Left" Height="63" Margin="10,41,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="40" TextAlignment="Center"/>
-                <TextBox Name="txtGameTimerMinutes" HorizontalAlignment="Left" Height="63" Margin="132,41,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="40" TextAlignment="Center"/>
-                <TextBox Name="txtGameTimerSeconds" HorizontalAlignment="Left" Height="63" Margin="71,41,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="40" TextAlignment="Center"/>
-                <TextBox Name="txtGameTimerHours_Reset" HorizontalAlignment="Left" Height="20" Margin="10,16,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
-                <TextBox Name="txtGameTimerMinutes_Reset" HorizontalAlignment="Left" Height="20" Margin="132,16,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
-                <TextBox Name="txtGameTimerSeconds_Reset" HorizontalAlignment="Left" Height="20" Margin="71,16,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
-                <Button Name="btnGameTimerSet" Content="Set" HorizontalAlignment="Left" Margin="193,16,0,0" VerticalAlignment="Top" Width="57"/>
-                <Button Name="btnGameTimerStart" Content="Start" HorizontalAlignment="Left" Margin="193,41,0,0" VerticalAlignment="Top" Width="75" Height="63"/>
-                <Button Name="btnGameTimerStop" Content="Stop" HorizontalAlignment="Left" Margin="273,41,0,0" VerticalAlignment="Top" Width="75" Height="63"/>
+        <GroupBox Margin="10,356,0,0" VerticalAlignment="Top" Height="171" HorizontalAlignment="Left" Width="366">
+            <Grid Margin="0,0,-12,4">
+                <TextBox Name="txtGameTimerHours" IsEnabled="False" HorizontalAlignment="Left" Height="63" Margin="10,41,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="40" TextAlignment="Center"/>
+                <TextBox Name="txtGameTimerSeconds" IsEnabled="False" HorizontalAlignment="Left" Height="63" Margin="132,41,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="40" TextAlignment="Center"/>
+                <TextBox Name="txtGameTimerMinutes" IsEnabled="False" HorizontalAlignment="Left" Height="63" Margin="71,41,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="56" FontSize="40" TextAlignment="Center"/>
+                <TextBox Name="txtGameTimerHours_Reset" HorizontalAlignment="Left" Height="20" Margin="10,16,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
+                <TextBox Name="txtGameTimerSeconds_Reset" HorizontalAlignment="Left" Height="20" Margin="132,16,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
+                <TextBox Name="txtGameTimerMinutes_Reset" HorizontalAlignment="Left" Height="20" Margin="71,16,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
+                <Button Name="btnGameTimerSet" Content="Set" HorizontalAlignment="Left" Margin="193,16,0,0" VerticalAlignment="Top" Width="57" Click="btnGameTimerSet_Click"/>
+                <Button Name="btnGameTimerStart" Content="Start" HorizontalAlignment="Left" Margin="193,41,0,0" VerticalAlignment="Top" Width="75" Height="63" Click="btnGameTimerStart_Click"/>
+                <Button Name="btnGameTimerStop" Content="Stop" HorizontalAlignment="Left" Margin="273,41,0,0" VerticalAlignment="Top" Width="75" Height="63" Click="btnGameTimerStop_Click"/>
+                <TextBox Name="txtGameTimerTotalSecond" TextAlignment="Right" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="10,109,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="178"/>
             </Grid>
         </GroupBox>
 

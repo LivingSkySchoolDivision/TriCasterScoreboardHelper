@@ -9,83 +9,53 @@ namespace TricasterHelper
 {
     class GameClock
     {
-        public bool CountsDown { get; set; }
+        private Timer timer;
 
-        private short hours;
-        private byte minutes;
-        private byte seconds;
+        private bool timerRunning;
+        public bool CountsDown { get; set; }
+        private const int timer_max_seconds = int.MaxValue - 1;
+        private const int timer_min_seconds = 0;
+
+        public int TotalSeconds { get; set; }
 
         public int Hours
         {
-            get { return this.hours; }
-            set { this.hours = (short)value; }
+            get 
+            { 
+                // How many hours are there in a huge ammount of seconds
+                return (int)((double)this.TotalSeconds / 3600);                
+            }
         }
 
         public int Minutes
         {
-            get { return this.minutes; }
-            set
+            get 
             {
-                // If theres an attempt to add more than 60 minutes, add hours where it would make sense to (using recursion!)
-                if (value >= 60)
-                {
-                    this.Hours += 1;
-                    this.Minutes += (value - 60);
-                }
-                else
-                {
-                    this.Minutes = value;
-                }
-
-                if (this.Minutes >= 60)
-                {
-                    this.Minutes -= 60;
-                    this.Hours += 1;
-                }
+                return (int)((double)(this.TotalSeconds - (this.Hours * 3600)) / 60);
             }
         }
 
         public int Seconds
         {
-            get { return this.seconds; }
-            set
+            get 
             {
-                // If theres an attempt to add more than 60 seconds, add minutes where it would make sense to (using recursion!)
-                if (value >= 60)
-                {
-                    this.Minutes += 1;
-                    this.Seconds += (value - 60);
-                }
-                else
-                {
-                    this.seconds = (byte)value;
-                    if (this.Seconds > 60)
-                    {
-                        this.Minutes += 1;
-                    }
-                }
-
-                if (this.Seconds >= 60)
-                {
-                    this.Seconds -= 60;
-                    this.Minutes += 1;
-                }
-
-                if (this.Seconds < 0)
-                {
-                    this.Seconds = 0;
-                }
-
-                if ((this.Seconds <= 0) && (this.Minutes <= 0) && (this.Minutes <=0))
-                {
-                    this.Stop();
-                }
+                return this.TotalSeconds - (this.Hours * 3600) - (this.Minutes * 60);
             }
         }
 
-        private Timer timer;
+        public void AddSeconds(int seconds)
+        {
+            this.TotalSeconds += seconds;
+            if (this.TotalSeconds > timer_max_seconds)
+            {
+                this.TotalSeconds = timer_max_seconds;
+            }
 
-        private bool timerRunning;
+            if (this.TotalSeconds < timer_min_seconds)
+            {
+                this.TotalSeconds = timer_min_seconds;
+            }
+        }
 
         private void timerElapsedHandler(object source, ElapsedEventArgs e)
         {
@@ -93,28 +63,26 @@ namespace TricasterHelper
             {
                 if (this.CountsDown)
                 {
-                    this.Seconds--;
+                    this.AddSeconds(-1);
                 }
                 else
                 {
-                    this.Seconds++;
+                    this.AddSeconds(1);
                 }
             }
+
+            timer.Stop();
+            timer.Start();
         }
         
         public void Set(int hours, int minutes, int seconds)
         {
-            this.Hours = hours;
-            this.Minutes = minutes;
-            this.Seconds = seconds;
+            this.TotalSeconds = (hours*60*60) + (minutes*60) + seconds;
         }
 
         public void Set(int minutes, int seconds)
         {
-            this.Hours = 0;
-            this.Minutes = minutes;
-            this.Seconds = seconds;
-
+            this.TotalSeconds = (minutes * 60) + seconds;
         }
 
         public void Start()
@@ -125,7 +93,7 @@ namespace TricasterHelper
 
         public void Stop()
         {
-            this.timer.Stop();
+            this.timer.Stop();            
             this.timerRunning = false;
         }
 
@@ -153,8 +121,6 @@ namespace TricasterHelper
             this.timerRunning = false;
             this.Set(minutes, seconds);
         }
-
-
-
+        
     }
 }
