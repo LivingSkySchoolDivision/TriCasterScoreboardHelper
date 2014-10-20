@@ -1,9 +1,15 @@
 ﻿<Window x:Class="TricasterHelper.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="224" Width="341">
+        Title="Tricaster Score Helper" Height="251" Width="251" ResizeMode="NoResize" WindowStyle="ToolWindow">
     <Grid>
-        <Button Name="btnSoccer" Content="Soccer" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="80" Click="btnSoccer_Click" Height="29"/>
+        <Button Name="btnSoccer" Content="Soccer" HorizontalAlignment="Left" Margin="10,0,0,13" Width="102" Click="btnSoccer_Click" Height="86" VerticalAlignment="Bottom"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" Height="90" Margin="10,0,0,0">
+            <Span FontSize="14"><Bold>Please select a module.</Bold></Span>
+            <LineBreak/>
+            <LineBreak/>
+            You will be prompted for a file to save the variables in, and then the scoring window will open.
+        </TextBlock>
 
     </Grid>
 </Window>

@@ -1,18 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace TricasterHelper
 {
@@ -27,10 +15,7 @@ namespace TricasterHelper
 
         private void uiRefreshTimerElapsedHandler(object source, ElapsedEventArgs e)
         {
-            Dispatcher.Invoke((Action)delegate()
-            {
-                updateClockFields(game);
-            });
+            Dispatcher.Invoke((Action)(() => updateClockFields(game)));
             
         }
 
@@ -46,9 +31,6 @@ namespace TricasterHelper
         private void updateClockFields(SoccerGame game)
         {
             // Timer
-            txtGameTimerHours.Text = game.Clock.Hours.ToString("D2");
-            txtGameTimerMinutes.Text = game.Clock.Minutes.ToString("D2");
-            txtGameTimerSeconds.Text = game.Clock.Seconds.ToString("D2");
             txtGameTimerFriendly.Text = game.Clock.TotalMinutes.ToString("D2") + ":" + game.Clock.Seconds.ToString("D2");
 
             // Save the file
@@ -182,10 +164,16 @@ namespace TricasterHelper
         private void btnGameTimerSet_Click(object sender, RoutedEventArgs e)
         {
             game.Clock.Set(
-                Helpers.ParseInt(txtGameTimerHours_Reset.Text),
                 Helpers.ParseInt(txtGameTimerMinutes_Reset.Text),
                 Helpers.ParseInt(txtGameTimerSeconds_Reset.Text)
                 );
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            uiRefreshTimer.Stop();
+            uiRefreshTimer.Enabled = false;
+            uiRefreshTimer.Dispose();
         }
 
     }

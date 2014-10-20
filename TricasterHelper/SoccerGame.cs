@@ -37,7 +37,24 @@ namespace TricasterHelper
             {
                 StringBuilder saveBuffer = new StringBuilder();
 
-                saveBuffer.AppendLine("GameSegment = " + this.GameSegment);
+                switch (this.GameSegment)
+                {
+                    case SoccerGameSegment.FirstHalf:
+                        saveBuffer.AppendLine("GameSegmentFull = First Half");
+                        saveBuffer.AppendLine("GameSegmentReallyShort = 1st");
+                        saveBuffer.AppendLine("GameSegmentShort = First");
+                        break;
+                    case SoccerGameSegment.SecondHalf:
+                        saveBuffer.AppendLine("GameSegmentFull = Second Half");
+                        saveBuffer.AppendLine("GameSegmentReallyShort = 2nd");
+                        saveBuffer.AppendLine("GameSegmentShort = Second");
+                        break;
+                    case SoccerGameSegment.Overtime:
+                        saveBuffer.AppendLine("GameSegmentFull = Overtime");
+                        saveBuffer.AppendLine("GameSegmentReallyShort = OT");
+                        saveBuffer.AppendLine("GameSegmentShort = OT");
+                        break;
+                }
 
                 saveBuffer.AppendLine("HomeTeamName = " + this.HomeTeam.Name);
                 saveBuffer.AppendLine("HomeTeamScore = " + this.HomeTeam.Score);
@@ -50,8 +67,8 @@ namespace TricasterHelper
                 saveBuffer.AppendLine("GameClockHours = " + this.Clock.Hours);
                 saveBuffer.AppendLine("GameClockTotalMinutes = " + this.Clock.TotalMinutes);
 
-                saveBuffer.AppendLine("GameClockFriendlyNoHours = " + this.Clock.TotalMinutes.ToString("D2") + ":" + this.Clock.Seconds.ToString("D2"));
-                saveBuffer.AppendLine("GameClockFriendly = " + this.Clock.Hours.ToString("D1") + ":" + this.Clock.Minutes.ToString("D2") + ":" + this.Clock.Seconds.ToString("D2"));
+                saveBuffer.AppendLine("GameClockFriendly = " + this.Clock.TotalMinutes.ToString("D2") + ":" + this.Clock.Seconds.ToString("D2"));
+                saveBuffer.AppendLine("GameClockFriendlyWithHours = " + this.Clock.Hours.ToString("D1") + ":" + this.Clock.Minutes.ToString("D2") + ":" + this.Clock.Seconds.ToString("D2"));
 
                 using (StreamWriter outfile = new StreamWriter(base.fileName))
                 {
