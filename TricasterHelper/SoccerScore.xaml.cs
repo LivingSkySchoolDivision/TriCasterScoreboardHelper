@@ -176,5 +176,11 @@ namespace TricasterHelper
             uiRefreshTimer.Dispose();
         }
 
+        private void btnAwayTeamSave_Click(object sender, RoutedEventArgs e)
+        {
+            game.AwayTeam.Name = txtAwayTeamName.Text;
+            game.Save();
+        }
+
     }
 }

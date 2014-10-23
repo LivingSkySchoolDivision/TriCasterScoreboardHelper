@@ -15,7 +15,7 @@
         </GroupBox>
         <GroupBox HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="341" Width="338" Background="#19FF0000">
             <Grid>
-                <Button x:Name="btnAwayTeamSave" Content="Save" HorizontalAlignment="Left" Margin="244,10,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+                <Button x:Name="btnAwayTeamSave" Content="Save" HorizontalAlignment="Left" Margin="244,10,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btnAwayTeamSave_Click"/>
                 <TextBox x:Name="txtAwayTeamName" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="Away Team Name" VerticalAlignment="Top" Width="229"/>
                 <TextBox x:Name="txtAwayTeamScore" Margin="102,118,0,0" TextWrapping="Wrap" Text="999" FontSize="60" Height="81" VerticalAlignment="Top" IsEnabled="False" TextAlignment="Center" HorizontalAlignment="Left" Width="111"/>
                 <Button x:Name="btnAwayTeamPlus1" Content="+1" HorizontalAlignment="Left" Margin="102,63,0,0" VerticalAlignment="Top" Width="111" Height="50" FontSize="25" Click="btnAwayTeamPlus2_Click"/>
