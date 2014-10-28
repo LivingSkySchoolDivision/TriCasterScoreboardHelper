@@ -54,17 +54,25 @@ namespace TricasterHelper
                     btnGameSegment_FirstHalf.IsEnabled = false;
                     btnGameSegment_SecondHalf.IsEnabled = true;
                     btnGameSegment_OverTime.IsEnabled = true;
+                    btnGameSegment_HalfTime.IsEnabled = true;
                     break;
                 case SoccerGameSegment.SecondHalf:
                     btnGameSegment_FirstHalf.IsEnabled = true;
                     btnGameSegment_SecondHalf.IsEnabled = false;
                     btnGameSegment_OverTime.IsEnabled = true;
+                    btnGameSegment_HalfTime.IsEnabled = true;
                     break;
                 case SoccerGameSegment.Overtime:
                     btnGameSegment_FirstHalf.IsEnabled = true;
                     btnGameSegment_SecondHalf.IsEnabled = true;
                     btnGameSegment_OverTime.IsEnabled = false;
-
+                    btnGameSegment_HalfTime.IsEnabled = true;
+                    break;
+                case SoccerGameSegment.Halftime:
+                    btnGameSegment_FirstHalf.IsEnabled = true;
+                    btnGameSegment_SecondHalf.IsEnabled = true;
+                    btnGameSegment_OverTime.IsEnabled = true;
+                    btnGameSegment_HalfTime.IsEnabled = false;
                     break;
             }
 
@@ -182,5 +190,10 @@ namespace TricasterHelper
             game.Save();
         }
 
+        private void BtnGameSegment_HalfTime_OnClick(object sender, RoutedEventArgs e)
+        {
+            game.GameSegment = SoccerGameSegment.Halftime;
+            updateFields(game);
+        }
     }
 }

@@ -23,11 +23,12 @@
                 <Button x:Name="btnAwayTeamResetScore" Content="Reset score to zero" HorizontalAlignment="Left" Margin="102,0,0,10" VerticalAlignment="Bottom" Width="111" Click="btnAwayTeamResetScore_Click"/>
             </Grid>
         </GroupBox>
-        <GroupBox HorizontalAlignment="Right" Margin="0,356,10,0" VerticalAlignment="Top" Height="174" Width="263">
-            <Grid HorizontalAlignment="Left" Margin="0,0,-12,-6" Width="263">
+        <GroupBox HorizontalAlignment="Right" Margin="0,356,10,0" VerticalAlignment="Top" Height="174" Width="362">
+            <Grid Margin="0,0,-2,-6">
                 <Button Name="btnGameSegment_FirstHalf" Content="First Half" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="154" Click="btnGameSegment_FirstHalf_Click"/>
-                <Button Name="btnGameSegment_SecondHalf" Content="Second Half" Margin="91,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="154" Click="btnGameSegment_SecondHalf_Click"/>
-                <Button Name="btnGameSegment_OverTime" Content="Overtime" Margin="172,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="154" Click="btnGameSegment_OverTime_Click"/>
+                <Button Name="btnGameSegment_SecondHalf" Content="Second Half" Margin="172,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="154" Click="btnGameSegment_SecondHalf_Click"/>
+                <Button Name="btnGameSegment_OverTime" Content="Overtime" Margin="253,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="154" Click="btnGameSegment_OverTime_Click"/>
+                <Button Name="btnGameSegment_HalfTime" Content="Halftime" Margin="91,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="154" Click="BtnGameSegment_HalfTime_OnClick"/>
             </Grid>
         </GroupBox>
         <GroupBox Margin="10,356,0,0" VerticalAlignment="Top" Height="171" HorizontalAlignment="Left" Width="305">

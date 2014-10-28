@@ -11,7 +11,8 @@ namespace TricasterHelper
     {
         FirstHalf,
         SecondHalf,
-        Overtime
+        Overtime,
+        Halftime
     }
     
     class SoccerGame : Game
@@ -48,6 +49,11 @@ namespace TricasterHelper
                         saveBuffer.AppendLine("GameSegmentFull = Second Half");
                         saveBuffer.AppendLine("GameSegmentReallyShort = 2nd");
                         saveBuffer.AppendLine("GameSegmentShort = Second");
+                        break;
+                    case SoccerGameSegment.Halftime:
+                        saveBuffer.AppendLine("GameSegmentFull = Halftime");
+                        saveBuffer.AppendLine("GameSegmentReallyShort = HT");
+                        saveBuffer.AppendLine("GameSegmentShort = Half");
                         break;
                     case SoccerGameSegment.Overtime:
                         saveBuffer.AppendLine("GameSegmentFull = Overtime");
