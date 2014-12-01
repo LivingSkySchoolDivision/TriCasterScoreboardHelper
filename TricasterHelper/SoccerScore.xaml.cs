@@ -16,7 +16,6 @@ namespace TricasterHelper
         private void uiRefreshTimerElapsedHandler(object source, ElapsedEventArgs e)
         {
             Dispatcher.Invoke((Action)(() => updateClockFields(game)));
-            
         }
 
         public SoccerScore(string fileName)

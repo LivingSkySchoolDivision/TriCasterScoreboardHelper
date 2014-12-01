@@ -55,12 +55,20 @@
     </ApplicationDefinition>
     <Compile Include="Game.cs" />
     <Compile Include="GameClock.cs" />
+    <Compile Include="GameTypes\HockeyGame.cs" />
     <Compile Include="Helpers.cs" />
-    <Compile Include="SoccerGame.cs" />
+    <Compile Include="GameTypes\SoccerGame.cs" />
+    <Compile Include="HockeyScore.xaml.cs">
+      <DependentUpon>HockeyScore.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SoccerScore.xaml.cs">
       <DependentUpon>SoccerScore.xaml</DependentUpon>
     </Compile>
     <Compile Include="Team.cs" />
+    <Page Include="HockeyScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

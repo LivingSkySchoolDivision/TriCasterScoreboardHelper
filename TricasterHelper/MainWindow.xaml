@@ -10,6 +10,7 @@
             <LineBreak/>
             You will be prompted for a file to save the variables in, and then the scoring window will open.
         </TextBlock>
+        <Button x:Name="btnHockey" Content="Hockey" HorizontalAlignment="Left" Margin="117,0,0,13" Width="102" Click="BtnHockey_OnClick" Height="86" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Window>

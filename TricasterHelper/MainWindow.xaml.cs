@@ -36,7 +36,6 @@ namespace TricasterHelper
         private void btnSoccer_Click(object sender, RoutedEventArgs e)
         {
             // Set up a file to save with
-
             SaveFileDialog saveDialog = new SaveFileDialog
             {
                 Filter = "Tricaster Variable Files|*.txt",
@@ -51,14 +50,9 @@ namespace TricasterHelper
                 // Try to open the file - if we are able to open the file, continue
                 try
                 {
-                    StreamWriter testStream = new StreamWriter(fileName);
-                    testStream.WriteLine("File creation test: " + DateTime.Now);
-                    testStream.Close();
-
                     // Open the score window
                     SoccerScore newWindow = new SoccerScore(fileName);
                     newWindow.Show();
-
                 }
                 catch (Exception ex)
                 {
@@ -67,6 +61,34 @@ namespace TricasterHelper
             }
 
             //this.Close();
+        }
+        
+        private void BtnHockey_OnClick(object sender, RoutedEventArgs e)
+        {
+            // Set up a file to save with
+            SaveFileDialog saveDialog = new SaveFileDialog
+            {
+                Filter = "Tricaster Variable Files|*.txt",
+                Title = "Create a file"
+            };
+            saveDialog.ShowDialog();
+
+            if (saveDialog.FileName != "")
+            {
+                string fileName = saveDialog.FileName;
+
+                // Try to open the file - if we are able to open the file, continue
+                try
+                {
+                    // Open the score window
+                    HockeyScore newWindow = new HockeyScore(fileName);
+                    newWindow.Show();
+                }
+                catch (Exception ex)
+                {
+                    DisplayError("Unable to write to file: " + ex.Message);
+                }
+            }
         }
     }
 }
