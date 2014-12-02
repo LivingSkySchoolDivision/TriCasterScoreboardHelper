@@ -9,7 +9,7 @@ namespace TricasterHelper
     /// </summary>
     public partial class SoccerScore : Window
     {
-        private static SoccerGame game;
+        private SoccerGame game;
 
         private System.Timers.Timer uiRefreshTimer;
 

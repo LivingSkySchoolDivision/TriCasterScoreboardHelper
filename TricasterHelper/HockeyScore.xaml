@@ -1,7 +1,7 @@
 ﻿<Window x:Class="TricasterHelper.HockeyScore"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="TriCaster Score Helper - Hockey" Height="569.493" Width="794" Loaded="Window_Loaded" Closing="Window_Closing">
+        Title="TriCaster Score Helper - Hockey" Height="574.493" Width="1028" Loaded="Window_Loaded" Closing="Window_Closing">
     <Grid Margin="0,0,0,1">
         <GroupBox HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="341" Width="338" Background="#190000FF">
             <Grid>
@@ -13,7 +13,7 @@
                 <Button Name="btnHomeTeamResetScore" Content="Reset score to zero" HorizontalAlignment="Left" Margin="102,0,0,10" VerticalAlignment="Bottom" Width="111" Click="btnHomeTeamResetScore_Click"/>
             </Grid>
         </GroupBox>
-        <GroupBox HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="341" Width="338" Background="#19FF0000">
+        <GroupBox HorizontalAlignment="Left" Margin="353,10,0,0" VerticalAlignment="Top" Height="341" Width="338" Background="#19FF0000">
             <Grid>
                 <Button x:Name="btnAwayTeamSave" Content="Save" HorizontalAlignment="Left" Margin="244,10,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btnAwayTeamSave_Click"/>
                 <TextBox x:Name="txtAwayTeamName" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="Away Team Name" VerticalAlignment="Top" Width="229"/>
@@ -23,27 +23,27 @@
                 <Button x:Name="btnAwayTeamResetScore" Content="Reset score to zero" HorizontalAlignment="Left" Margin="102,0,0,10" VerticalAlignment="Bottom" Width="111" Click="btnAwayTeamResetScore_Click"/>
             </Grid>
         </GroupBox>
-        <GroupBox HorizontalAlignment="Right" Margin="0,356,10,0" VerticalAlignment="Top" Height="174" Width="438">
-            <Grid Margin="0,0,-2,-6">
+        <GroupBox HorizontalAlignment="Left" Margin="696,186,0,0" VerticalAlignment="Top" Height="341" Width="310" Background="#19FF0000">
+            <Grid Margin="10,10,-2,-6">
                 <Button Name="btnGameSegment_FirstPeriod" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="154" Click="BtnGameSegment_FirstPeriod_OnClick">
                     <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center">First<LineBreak/>Period</TextBlock>
                 </Button>
                 <Button Name="btnGameSegment_ThirdPeriod" Margin="172,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="154" Click="BtnGameSegment_ThirdPeriod_OnClick">
                     <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center">Third<LineBreak/>Period</TextBlock>
                 </Button>
-                <Button Name="btnGameSegment_Overtime" Margin="253,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="154" Click="BtnGameSegment_Overtime_OnClick">
+                <Button Name="btnGameSegment_Overtime" Margin="10,169,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="154" Click="BtnGameSegment_Overtime_OnClick">
                     <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center">Overtime</TextBlock>
                 </Button>
                 <Button Name="btnGameSegment_SecondPeriod" Margin="91,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="154" Click="BtnGameSegment_SecondPeriod_OnClick">
                     <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center">Second<LineBreak/>Period</TextBlock>
                 </Button>
-                <Button x:Name="btnGameSegment_Shootout" Margin="334,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="154" Click="BtnGameSegment_Shootout_OnClick">
+                <Button x:Name="btnGameSegment_Shootout" Margin="91,169,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Height="154" Click="BtnGameSegment_Shootout_OnClick">
                     <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center">Shootout</TextBlock>
                 </Button>
             </Grid>
         </GroupBox>
-        <GroupBox Margin="10,356,0,0" VerticalAlignment="Top" Height="171" HorizontalAlignment="Left" Width="305">
-            <Grid Margin="0,10,-2,-6">
+        <GroupBox Margin="696,10,0,0" VerticalAlignment="Top" Height="171" HorizontalAlignment="Left" Width="305" Header="Game Timer">
+            <Grid Margin="0,10,-2,-12">
                 <TextBox Name="txtGameTimerSeconds_Reset" HorizontalAlignment="Left" Height="20" Margin="71,22,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
                 <TextBox Name="txtGameTimerMinutes_Reset" HorizontalAlignment="Left" Height="20" Margin="10,22,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
                 <Button Name="btnGameTimerSet" Content="Set" HorizontalAlignment="Left" Margin="132,22,0,0" VerticalAlignment="Top" Width="57" Click="btnGameTimerSet_Click"/>
@@ -52,8 +52,32 @@
                 <Label Content="Minutes" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" FontSize="6" Width="56" HorizontalContentAlignment="Center"/>
                 <Label Content="Seconds" HorizontalAlignment="Left" Margin="71,4,0,0" VerticalAlignment="Top" FontSize="6" Width="56" HorizontalContentAlignment="Center"/>
                 <TextBox Name="txtGameTimerFriendly" TextAlignment="Right" IsEnabled="False" FontSize="36" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="62" Margin="10,47,0,0" TextWrapping="Wrap" Text="999:99" VerticalAlignment="Top" Width="117"/>
-                <Button Name="btnTimerCountsUp" Content="Count UP" FontSize="10" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="70" Click="BtnTimerCountsUp_OnClick"/>
-                <Button x:Name="btnTimerCountsDown" Content="Count DOWN" FontSize="10" HorizontalAlignment="Left" Margin="85,134,0,0" VerticalAlignment="Top" Width="70" Click="BtnTimerCountsDown_OnClick"/>
+                <Button Name="btnTimerCountsUp" Content="Count UP" FontSize="10" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" Width="70" Click="BtnTimerCountsUp_OnClick"/>
+                <Button x:Name="btnTimerCountsDown" Content="Count DOWN" FontSize="10" HorizontalAlignment="Left" Margin="85,114,0,0" VerticalAlignment="Top" Width="70" Click="BtnTimerCountsDown_OnClick"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Margin="10,356,0,0" VerticalAlignment="Top" Height="171" HorizontalAlignment="Left" Width="338" Header="Home Team Power Play">
+            <Grid Margin="0,10,-2,-12">
+                <TextBox Name="txtHomeTimerSeconds_Reset" HorizontalAlignment="Left" Height="20" Margin="71,22,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
+                <TextBox Name="txtHomeTimerMinutes_Reset" HorizontalAlignment="Left" Height="20" Margin="10,22,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
+                <Button Name="btnHomeTimerSet" Content="Set" HorizontalAlignment="Left" Margin="132,22,0,0" VerticalAlignment="Top" Width="57" Click="BtnHomeTimerSet_OnClick"/>
+                <Label Content="Minutes" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" FontSize="6" Width="56" HorizontalContentAlignment="Center"/>
+                <Label Content="Seconds" HorizontalAlignment="Left" Margin="71,4,0,0" VerticalAlignment="Top" FontSize="6" Width="56" HorizontalContentAlignment="Center"/>
+                <TextBox Name="txtHomeTimerFriendly" TextAlignment="Right" IsEnabled="False" FontSize="36" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="62" Margin="10,47,0,0" TextWrapping="Wrap" Text="999:99" VerticalAlignment="Top" Width="117"/>
+                <Button Name="btnHomeTimerCountsUp" Content="Count UP" FontSize="10" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" Width="70" Click="BtnHomeTimerCountsUp_OnClick"/>
+                <Button x:Name="btnHomeTimerCountsDown" Content="Count DOWN" FontSize="10" HorizontalAlignment="Left" Margin="85,114,0,0" VerticalAlignment="Top" Width="70" Click="BtnHomeTimerCountsDown_OnClick"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Margin="353,356,0,0" VerticalAlignment="Top" Height="171" HorizontalAlignment="Left" Width="338" Header="Away Team Power Play">
+            <Grid Margin="0,10,-2,-12">
+                <TextBox Name="txtAwayTimerSeconds_Reset" HorizontalAlignment="Left" Height="20" Margin="71,22,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
+                <TextBox Name="txtAwayTimerMinutes_Reset" HorizontalAlignment="Left" Height="20" Margin="10,22,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56" FontSize="12" TextAlignment="Center"/>
+                <Button Name="btnAwayTimerSet" Content="Set" HorizontalAlignment="Left" Margin="132,22,0,0" VerticalAlignment="Top" Width="57" Click="BtnAwayTimerSet_OnClick"/>
+                <Label Content="Minutes" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" FontSize="6" Width="56" HorizontalContentAlignment="Center"/>
+                <Label Content="Seconds" HorizontalAlignment="Left" Margin="71,4,0,0" VerticalAlignment="Top" FontSize="6" Width="56" HorizontalContentAlignment="Center"/>
+                <TextBox Name="txtAwayTimerFriendly" TextAlignment="Right" IsEnabled="False" FontSize="36" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="62" Margin="10,47,0,0" TextWrapping="Wrap" Text="999:99" VerticalAlignment="Top" Width="117"/>
+                <Button Name="btnAwayTimerCountsUp" Content="Count UP" FontSize="10" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" Width="70" Click="BtnAwayTimerCountsUp_OnClick"/>
+                <Button x:Name="btnAwayTimerCountsDown" Content="Count DOWN" FontSize="10" HorizontalAlignment="Left" Margin="85,114,0,0" VerticalAlignment="Top" Width="70" Click="BtnAwayTimerCountsDown_OnClick"/>
             </Grid>
         </GroupBox>
 

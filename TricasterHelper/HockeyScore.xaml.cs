@@ -21,7 +21,7 @@ namespace TricasterHelper
     /// </summary>
     public partial class HockeyScore : Window
     {
-        private static HockeyGame game;
+        private HockeyGame game;
         private System.Timers.Timer uiRefreshTimer;
 
         private void uiRefreshTimerElapsedHandler(object source, ElapsedEventArgs e)
@@ -42,6 +42,8 @@ namespace TricasterHelper
         {
             // Timer
             txtGameTimerFriendly.Text = game.Clock.TotalMinutes.ToString("D2") + ":" + game.Clock.Seconds.ToString("D2");
+            txtAwayTimerFriendly.Text = game.AwayPowerPlayClock.TotalMinutes.ToString("D2") + ":" + game.AwayPowerPlayClock.Seconds.ToString("D2");
+            txtHomeTimerFriendly.Text = game.HomePowerPlayClock.TotalMinutes.ToString("D2") + ":" + game.HomePowerPlayClock.Seconds.ToString("D2");
 
             // Save the file
             game.Save();
@@ -108,6 +110,7 @@ namespace TricasterHelper
                 btnGameTimerStop.IsEnabled = false;
             }
 
+            // Game clock count up/down toggles
             if (game.Clock.CountsDown)
             {
                 btnTimerCountsUp.IsEnabled = true;
@@ -117,6 +120,30 @@ namespace TricasterHelper
             {
                 btnTimerCountsUp.IsEnabled = false;
                 btnTimerCountsDown.IsEnabled = true;
+            }
+
+            // Power play clock count up/down toggles (Home team)
+            if (game.HomePowerPlayClock.CountsDown)
+            {
+                btnHomeTimerCountsUp.IsEnabled = true;
+                btnHomeTimerCountsDown.IsEnabled = false;
+            }
+            else
+            {
+                btnHomeTimerCountsUp.IsEnabled = false;
+                btnHomeTimerCountsDown.IsEnabled = true;
+            }
+
+            // Power play clock count up/down toggles (Away team)
+            if (game.AwayPowerPlayClock.CountsDown)
+            {
+                btnAwayTimerCountsUp.IsEnabled = true;
+                btnAwayTimerCountsDown.IsEnabled = false;
+            }
+            else
+            {
+                btnAwayTimerCountsUp.IsEnabled = false;
+                btnAwayTimerCountsDown.IsEnabled = true;
             }
 
             // Save the file
@@ -164,12 +191,16 @@ namespace TricasterHelper
         private void btnGameTimerStart_Click(object sender, RoutedEventArgs e)
         {
             game.Clock.Start();
+            game.AwayPowerPlayClock.Start();
+            game.HomePowerPlayClock.Start();
             updateFields(game);
         }
 
         private void btnGameTimerStop_Click(object sender, RoutedEventArgs e)
         {
             game.Clock.Stop();
+            game.AwayPowerPlayClock.Stop();
+            game.HomePowerPlayClock.Stop();
             updateFields(game);
         }
 
@@ -244,6 +275,46 @@ namespace TricasterHelper
             uiRefreshTimer.Stop();
             uiRefreshTimer.Enabled = false;
             uiRefreshTimer.Dispose();
+        }
+
+        private void BtnHomeTimerSet_OnClick(object sender, RoutedEventArgs e)
+        {
+            game.HomePowerPlayClock.Set(
+                Helpers.ParseInt(txtHomeTimerMinutes_Reset.Text),
+                Helpers.ParseInt(txtHomeTimerSeconds_Reset.Text)
+                );
+        }
+
+        private void BtnAwayTimerSet_OnClick(object sender, RoutedEventArgs e)
+        {
+            game.AwayPowerPlayClock.Set(
+                Helpers.ParseInt(txtAwayTimerMinutes_Reset.Text),
+                Helpers.ParseInt(txtAwayTimerSeconds_Reset.Text)
+                );
+        }
+
+        private void BtnHomeTimerCountsUp_OnClick(object sender, RoutedEventArgs e)
+        {
+            game.HomePowerPlayClock.CountsDown = false;
+            updateFields(game);
+        }
+
+        private void BtnHomeTimerCountsDown_OnClick(object sender, RoutedEventArgs e)
+        {
+            game.HomePowerPlayClock.CountsDown = true;
+            updateFields(game);
+        }
+
+        private void BtnAwayTimerCountsUp_OnClick(object sender, RoutedEventArgs e)
+        {
+            game.AwayPowerPlayClock.CountsDown = false;
+            updateFields(game);
+        }
+
+        private void BtnAwayTimerCountsDown_OnClick(object sender, RoutedEventArgs e)
+        {
+            game.AwayPowerPlayClock.CountsDown = true;
+            updateFields(game);
         }
     }
 }

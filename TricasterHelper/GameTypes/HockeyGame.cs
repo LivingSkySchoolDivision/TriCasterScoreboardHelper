@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 
 namespace TricasterHelper.GameTypes
 {
@@ -24,6 +25,8 @@ namespace TricasterHelper.GameTypes
 
         public HockeyGameSegment GameSegment { get; set; }
         public GameClock Clock { get; set; }
+        public GameClock HomePowerPlayClock { get; set; }
+        public GameClock AwayPowerPlayClock { get; set; }
 
         public HockeyGame(string fileName)
             : base(fileName)
@@ -33,6 +36,12 @@ namespace TricasterHelper.GameTypes
             GameSegment = HockeyGameSegment.FirstPeriod;
             this.Clock = new GameClock(0,0);
             this.Clock.CountsDown = true;
+
+            this.HomePowerPlayClock = new GameClock(0,0);
+            this.HomePowerPlayClock.CountsDown = true;
+
+            this.AwayPowerPlayClock = new GameClock(0,0);
+            this.AwayPowerPlayClock.CountsDown = true;
         }
         public override void Save()
         {
@@ -79,9 +88,22 @@ namespace TricasterHelper.GameTypes
                 saveBuffer.AppendLine("GameClockMinutes = " + this.Clock.Minutes);
                 saveBuffer.AppendLine("GameClockHours = " + this.Clock.Hours);
                 saveBuffer.AppendLine("GameClockTotalMinutes = " + this.Clock.TotalMinutes);
-
                 saveBuffer.AppendLine("GameClockFriendly = " + this.Clock.TotalMinutes.ToString("D2") + ":" + this.Clock.Seconds.ToString("D2"));
                 saveBuffer.AppendLine("GameClockFriendlyWithHours = " + this.Clock.Hours.ToString("D1") + ":" + this.Clock.Minutes.ToString("D2") + ":" + this.Clock.Seconds.ToString("D2"));
+
+                saveBuffer.AppendLine("HomePowerPlayClockSeconds = " + this.HomePowerPlayClock.Seconds);
+                saveBuffer.AppendLine("HomePowerPlayClockMinutes = " + this.HomePowerPlayClock.Minutes);
+                saveBuffer.AppendLine("HomePowerPlayClockHours = " + this.HomePowerPlayClock.Hours);
+                saveBuffer.AppendLine("HomePowerPlayClockTotalMinutes = " + this.HomePowerPlayClock.TotalMinutes);
+                saveBuffer.AppendLine("HomePowerPlayClockFriendly = " + this.HomePowerPlayClock.TotalMinutes.ToString("D2") + ":" + this.HomePowerPlayClock.Seconds.ToString("D2"));
+                saveBuffer.AppendLine("HomePowerPlayClockFriendlyWithHours = " + this.HomePowerPlayClock.Hours.ToString("D1") + ":" + this.HomePowerPlayClock.Minutes.ToString("D2") + ":" + this.HomePowerPlayClock.Seconds.ToString("D2"));
+
+                saveBuffer.AppendLine("AwayPowerPlayClockSeconds = " + this.AwayPowerPlayClock.Seconds);
+                saveBuffer.AppendLine("AwayPowerPlayClockMinutes = " + this.AwayPowerPlayClock.Minutes);
+                saveBuffer.AppendLine("AwayPowerPlayClockHours = " + this.AwayPowerPlayClock.Hours);
+                saveBuffer.AppendLine("AwayPowerPlayClockTotalMinutes = " + this.AwayPowerPlayClock.TotalMinutes);
+                saveBuffer.AppendLine("AwayPowerPlayClockFriendly = " + this.AwayPowerPlayClock.TotalMinutes.ToString("D2") + ":" + this.AwayPowerPlayClock.Seconds.ToString("D2"));
+                saveBuffer.AppendLine("AwayPowerPlayClockFriendlyWithHours = " + this.AwayPowerPlayClock.Hours.ToString("D1") + ":" + this.AwayPowerPlayClock.Minutes.ToString("D2") + ":" + this.AwayPowerPlayClock.Seconds.ToString("D2"));
 
                 using (StreamWriter outfile = new StreamWriter(base.fileName))
                 {
